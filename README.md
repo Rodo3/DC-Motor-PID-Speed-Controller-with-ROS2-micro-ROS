@@ -26,13 +26,13 @@ This project presents the **design, simulation, and implementation of a real-tim
 ## 🧰 Technologies Used
 - **Programming Languages:** C++ (Arduino/micro-ROS), Python (ROS 2 nodes)
 - **Frameworks:**
-  - ROS 2 Foxy Fitzroy
+  - ROS2 
   - micro-ROS
   - rcl/rclc/rclc_executor libraries for embedded ROS 2 nodes
 - **Visualization Tools:**
   - rqt_graph (node topology)
   - PlotJuggler (real-time signal monitoring)
-- **Simulation Tools:** MATLAB for second-order system dynamics, ROS 2 nodes for real-time modeling
+- **Simulation Tools:** MATLAB for second-order system dynamics, ROS2 nodes for real-time modeling
 - **Hardware:**
   - ESP32 MCU
   - Brushed DC motor with encoder
@@ -43,7 +43,9 @@ This project presents the **design, simulation, and implementation of a real-tim
 
 ## 🧱 System Architecture Overview
 ### Block Diagram
-[![Block Diagram](https://drive.google.com/uc?id=11N3fDP9h-Z_C8zcQtjGJY7sUSbTNXLhm)](https://drive.google.com/file/d/11N3fDP9h-Z_C8zcQtjGJY7sUSbTNXLhm/view?usp=drive_link)
+<a href="https://drive.google.com/file/d/11N3fDP9h-Z_C8zcQtjGJY7sUSbTNXLhm/view?usp=drive_link" target="_blank">
+  <img src="https://drive.google.com/uc?id=11N3fDP9h-Z_C8zcQtjGJY7sUSbTNXLhm" width="500"/>
+</a>
 
 ### Key Components
 - **ESP32 Node (`motor_node`)**: Reads encoder feedback, performs PID control, generates PWM + direction signals, publishes measured speed.
@@ -157,11 +159,13 @@ Limits the integral term to avoid overshooting when actuator is saturated.
   - Settling Time: 1.2 s
   - Overshoot: 5%
 
-#### 📈 Experimental Graph – PlotJuggler Output
-[![PlotJuggler graph with Ki=2.0](https://drive.google.com/uc?id=1ksXzNSXkgIHkk6kX1OKxe4StCslFSFMj)](https://drive.google.com/file/d/1ksXzNSXkgIHkk6kX1OKxe4StCslFSFMj/view?usp=drive_link)
+### 📈 Experimental Graph – PlotJuggler Output
+<a href="https://drive.google.com/file/d/1ksXzNSXkgIHkk6kX1OKxe4StCslFSFMj/view?usp=drive_link" target="_blank">
+  <img src="https://drive.google.com/uc?id=1ksXzNSXkgIHkk6kX1OKxe4StCslFSFMj" width="500"/>
+</a>
 *Figure: Visualization of motor response to a constant set point using PlotJuggler. The plot shows excellent tracking accuracy with minimal deviation between the `/motor_output` and `/set_point` topics, confirming the effectiveness of the integral component (Ki = 2.0) in reducing steady-state error.*
 
----
+...
 
 ## 🔍 Observations
 - ROS 2 enables **modular, distributed system design**, ideal for robot platforms with multiple actuators and sensors

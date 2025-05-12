@@ -43,7 +43,7 @@ This project presents the **design, simulation, and implementation of a real-tim
 
 ## 🧱 System Architecture Overview
 ### Block Diagram
-![Block Diagram](docs/block_diagram.png)
+[![Block Diagram](https://drive.google.com/uc?id=11N3fDP9h-Z_C8zcQtjGJY7sUSbTNXLhm)](https://drive.google.com/file/d/11N3fDP9h-Z_C8zcQtjGJY7sUSbTNXLhm/view?usp=drive_link)
 
 ### Key Components
 - **ESP32 Node (`motor_node`)**: Reads encoder feedback, performs PID control, generates PWM + direction signals, publishes measured speed.
@@ -156,6 +156,10 @@ Limits the integral term to avoid overshooting when actuator is saturated.
   - ISE: 0.0104 (rad/s)²·s
   - Settling Time: 1.2 s
   - Overshoot: 5%
+
+#### 📈 Experimental Graph – PlotJuggler Output
+[![PlotJuggler graph with Ki=2.0](https://drive.google.com/uc?id=1ksXzNSXkgIHkk6kX1OKxe4StCslFSFMj)](https://drive.google.com/file/d/1ksXzNSXkgIHkk6kX1OKxe4StCslFSFMj/view?usp=drive_link)
+*Figure: Visualization of motor response to a constant set point using PlotJuggler. The plot shows excellent tracking accuracy with minimal deviation between the `/motor_output` and `/set_point` topics, confirming the effectiveness of the integral component (Ki = 2.0) in reducing steady-state error.*
 
 ---
 
